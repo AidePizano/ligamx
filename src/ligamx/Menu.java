@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ligamx;
-
+import java.sql.*;
 /**Boton de buscar
  *
  * @author Aide Piez
@@ -186,6 +186,7 @@ public class Menu extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            //lista de las tablas de la base de datos en el combobox
             public void run() {
                 new Menu().setVisible(true);
             }
