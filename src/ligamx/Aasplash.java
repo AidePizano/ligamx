@@ -5,25 +5,35 @@
  */
 package ligamx;
 
+import com.sun.awt.AWTUtilities;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
 /**
  *
  * @author Aide Piez
  */
-public class Splash extends javax.swing.JFrame {
+public final class Aasplash extends javax.swing.JFrame {
 
     /**
      * Creates new form Splash
      */
-    public Splash() {
+    double i=50, j=1;
+    barra hilo;
+    public Aasplash() {
+        getContentPane().setBackground(new java.awt.Color(255,255,255));
         initComponents();
+        iniciar();
         ImageIcon Splash=new ImageIcon("src/img/logo.png");
         Icon icono=new ImageIcon(Splash.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT));
         fondo.setIcon(icono);
         this.repaint();
+    }
+    public void iniciar(){
+        setLocationRelativeTo(null);
+        hilo=new barra(getProgreso());
+        hilo.start();
+        hilo=null;
     }
 
     /**
@@ -36,25 +46,40 @@ public class Splash extends javax.swing.JFrame {
     private void initComponents() {
 
         fondo = new javax.swing.JLabel();
+        progreso = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 190));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+        progreso.setBackground(new java.awt.Color(51, 51, 255));
+        progreso.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                progresoStateChanged(evt);
+            }
+        });
+        getContentPane().add(progreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 194, 340, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void progresoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_progresoStateChanged
+    /*if(progreso.getValue()==i){
+        System.exit(0);
+        if(j!=101){
+            AWTUtilities.setWindowOpacity(this, Float.valueOf((100-j)/100+"f"));
+            i++;
+            j+=2;
+        }
+    }*/
+    if(progreso.getValue()==100){
+        Inicio i=new Inicio();
+       i.setVisible(true);
+       this.dispose();
+    }
+// TODO add your handling code here:
+    }//GEN-LAST:event_progresoStateChanged
 
     /**
      * @param args the command line arguments
@@ -73,25 +98,42 @@ public class Splash extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aasplash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aasplash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aasplash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Aasplash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new Splash().setVisible(true);
+                new Aasplash().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
+    private javax.swing.JProgressBar progreso;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the progreso
+     */
+    public javax.swing.JProgressBar getProgreso() {
+        return progreso;
+    }
+
+    /**
+     * @param progreso the progreso to set
+     */
+    public void setProgreso(javax.swing.JProgressBar progreso) {
+        this.progreso = progreso;
+    }
 }

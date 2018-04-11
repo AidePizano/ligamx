@@ -17,6 +17,10 @@ public class Nuevopartido extends javax.swing.JFrame {
     public Nuevopartido() {
         getContentPane().setBackground(new java.awt.Color(245,245,245));
         initComponents();
+        iniciar();
+    }
+     public void iniciar(){
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -126,6 +130,11 @@ public class Nuevopartido extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/azul.jpg"))); // NOI18N
 
         jButton3.setText("Menu ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -253,6 +262,12 @@ public class Nuevopartido extends javax.swing.JFrame {
     private void textField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textField7ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+Inicio i=new Inicio();
+       i.setVisible(true);
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

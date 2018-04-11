@@ -17,6 +17,10 @@ public class Itecnicos extends javax.swing.JFrame {
     public Itecnicos() {
         getContentPane().setBackground(new java.awt.Color(245,245,245));
         initComponents();
+        iniciar();
+    }
+     public void iniciar(){
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -64,8 +68,13 @@ public class Itecnicos extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         jButton1.setText("Menu ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Regresar");
+        jButton3.setText("Nuevo Registro");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -106,7 +115,7 @@ public class Itecnicos extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
+                        .addGap(141, 141, 141)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)
@@ -136,8 +145,16 @@ public class Itecnicos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+tecnicos te=new tecnicos();
+       te.setVisible(true);
+       this.dispose();         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+Inicio i=new Inicio();
+       i.setVisible(true);
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

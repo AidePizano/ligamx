@@ -19,6 +19,10 @@ public class tecnicos extends javax.swing.JFrame {
     public tecnicos() {
         getContentPane().setBackground(new java.awt.Color(245,245,245));
         initComponents();
+        iniciar();
+    }
+     public void iniciar(){
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -81,6 +85,11 @@ public class tecnicos extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton2.setText("Menu");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
@@ -161,6 +170,12 @@ public class tecnicos extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+  Inicio i=new Inicio();
+       i.setVisible(true);
+       this.dispose();      // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -17,8 +17,11 @@ public class Jornada extends javax.swing.JFrame {
     public Jornada() {
         getContentPane().setBackground(new java.awt.Color(245,245,245));
         initComponents();
+        iniciar();
     }
-
+ public void iniciar(){
+        setLocationRelativeTo(null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,8 +67,18 @@ public class Jornada extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
         jButton1.setText("Menu ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Volver");
+        jButton3.setText("Nuevo Registro");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(204, 255, 204));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -99,9 +112,9 @@ public class Jornada extends javax.swing.JFrame {
                                 .addGap(42, 42, 42)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(155, 155, 155)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
+                                .addGap(135, 135, 135)
+                                .addComponent(jButton3)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton4)))
                         .addGap(0, 109, Short.MAX_VALUE))))
         );
@@ -127,6 +140,18 @@ public class Jornada extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+Inicio i=new Inicio();
+       i.setVisible(true);
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+nuevajornada jor=new nuevajornada();
+       jor.setVisible(true);
+       this.dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

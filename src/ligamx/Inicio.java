@@ -8,6 +8,7 @@ package ligamx;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         getContentPane().setBackground(new java.awt.Color(245,245,245));
         initComponents();
+        iniciar();
         ImageIcon imagen=new ImageIcon("src/img/logo.png");
         Icon icono=new ImageIcon(imagen.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT));
         fondo.setIcon(icono);
@@ -29,6 +31,9 @@ public class Inicio extends javax.swing.JFrame {
         Icon signo=new ImageIcon(acerca.getImage().getScaledInstance(info.getWidth(), info.getHeight(), Image.SCALE_DEFAULT));
         info.setIcon(signo);
         this.repaint();
+    }
+     public void iniciar(){
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -47,7 +52,6 @@ public class Inicio extends javax.swing.JFrame {
         box = new javax.swing.JComboBox<>();
         info = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -68,39 +72,44 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel1.setText("Acerca de");
 
-        box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Técnicos", "Equipos", "Jornada", "Partidos", "Temporada" }));
+        box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elije una opción", "Técnicos", "Equipos", "Jornada", "Partidos", "Temporada" }));
+        box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxActionPerformed(evt);
+            }
+        });
+
+        info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Seleccione tabla:");
-
-        jButton1.setText("Aceptar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(box, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jButton1)))
-                .addContainerGap(113, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(box, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,13 +119,11 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -125,6 +132,47 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxActionPerformed
+JComboBox x=(JComboBox)evt.getSource();
+String tecnicos="Técnicos";
+String equipos="Equipos";
+String jornada="Jornada";
+String partidos="Partidos";
+String temporada="Temporada";
+String str=(String)x.getSelectedItem();
+if(x.getSelectedItem().equals(tecnicos)){
+    Itecnicos te=new Itecnicos();
+       te.setVisible(true);
+       this.dispose();
+}// TODO add your handling code here:
+if(x.getSelectedItem().equals(equipos)){
+    equipo equip=new equipo();
+       equip.setVisible(true);
+       this.dispose();
+}
+if(x.getSelectedItem().equals(jornada)){
+    Jornada jor=new Jornada();
+       jor.setVisible(true);
+       this.dispose();
+}
+if(x.getSelectedItem().equals(partidos)){
+    Partidos par=new Partidos();
+       par.setVisible(true);
+       this.dispose();
+}
+if(x.getSelectedItem().equals(temporada)){
+    Itemporada tem=new Itemporada();
+       tem.setVisible(true);
+       this.dispose();
+}
+    }//GEN-LAST:event_boxActionPerformed
+
+    private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
+informacion i=new informacion();
+       i.setVisible(true);
+       this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_infoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,7 +213,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> box;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton info;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
