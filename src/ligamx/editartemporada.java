@@ -5,6 +5,14 @@
  */
 package ligamx;
 
+import MySQL.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Aide Piez
@@ -54,6 +62,11 @@ public class editartemporada extends javax.swing.JFrame {
         });
 
         jButton1.setText("Guardar Cambios");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
@@ -130,6 +143,37 @@ Inicio i=new Inicio();
        i.setVisible(true);
        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+try
+        {
+            Connection conexion;
+            conexion=Conexion.obtener();
+            PreparedStatement consulta = conexion.prepareStatement("INSERT INTO temporada VALUES");
+            ResultSet resultado = consulta.executeQuery();
+            while(resultado.next())
+            {
+                String dato=resultado.getString("Id_jornada");
+                System.out.println(dato);
+                
+                
+                
+                
+                
+            }
+            conexion.close();
+        }
+        catch(SQLException ex)
+        {
+            try {
+                throw new SQLException(ex);
+            } catch (SQLException ex1) {
+                Logger.getLogger(editartemporada.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(editartemporada.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

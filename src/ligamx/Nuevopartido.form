@@ -59,7 +59,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="textField7" min="-2" pref="153" max="-2" attributes="0"/>
+                                      <Component id="jornada" min="-2" pref="153" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -76,14 +76,14 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="textField5" min="-2" pref="153" max="-2" attributes="0"/>
+                                          <Component id="fecha" min="-2" pref="153" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="textField3" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="textField2" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="textField1" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="gol1" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="visitante" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="local" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="textField4" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="textField6" min="-2" pref="153" max="-2" attributes="0"/>
+                                          <Component id="estadio" min="-2" pref="153" max="-2" attributes="0"/>
+                                          <Component id="gol2" min="-2" pref="153" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -118,36 +118,36 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField7" min="-2" max="-2" attributes="0"/>
+                  <Component id="jornada" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="local" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <Component id="textField2" min="-2" max="-2" attributes="0"/>
+                          <Component id="visitante" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="textField3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="gol1" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                  <Component id="textField6" min="-2" max="-2" attributes="0"/>
+                  <Component id="gol2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="textField4" min="-2" max="-2" attributes="0"/>
+                      <Component id="estadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="textField5" min="-2" max="-2" attributes="0"/>
+                      <Component id="fecha" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
@@ -207,14 +207,14 @@
         <Property name="text" type="java.lang.String" value="Nuevo Partido"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField1">
+    <Component class="java.awt.TextField" name="local">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="localActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.TextField" name="textField2">
+    <Component class="java.awt.TextField" name="visitante">
     </Component>
-    <Component class="java.awt.TextField" name="textField3">
+    <Component class="java.awt.TextField" name="gol1">
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
@@ -266,24 +266,24 @@
         <Property name="text" type="java.lang.String" value="Fecha"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="textField4">
+    <Component class="java.awt.TextField" name="estadio">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="estadioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.TextField" name="textField5">
+    <Component class="java.awt.TextField" name="fecha">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fechaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.TextField" name="textField6">
+    <Component class="java.awt.TextField" name="gol2">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gol2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.TextField" name="textField7">
+    <Component class="java.awt.TextField" name="jornada">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField7ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jornadaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">

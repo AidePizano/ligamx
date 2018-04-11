@@ -5,6 +5,14 @@
  */
 package ligamx;
 
+import MySQL.Conexion;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aide Piez
@@ -34,7 +42,7 @@ public class nuevatemporada extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nom = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -49,13 +57,18 @@ public class nuevatemporada extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nomActionPerformed(evt);
             }
         });
 
         jButton1.setText("Aceptar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo.png"))); // NOI18N
 
@@ -97,7 +110,7 @@ public class nuevatemporada extends javax.swing.JFrame {
                                 .addGap(91, 91, 91)
                                 .addComponent(jLabel2)
                                 .addGap(26, 26, 26)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -109,7 +122,7 @@ public class nuevatemporada extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(38, 38, 38)
@@ -123,15 +136,41 @@ public class nuevatemporada extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nomActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 Inicio i=new Inicio();
        i.setVisible(true);
        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+String sSQL="";
+        try
+        {
+            Connection conexion;
+            conexion=Conexion.obtener();
+            sSQL = "Insert Into temporadas (Nombre) values ('"+nom.getText()+"');";
+    
+    try
+    {
+        Statement st = (Statement) conexion.createStatement();
+        st.executeUpdate(sSQL);
+    }
+    catch(SQLException ex){
+        JOptionPane.showMessageDialog(null,ex);  
+    }
+    
+}       catch (SQLException ex) {
+            Logger.getLogger(nuevatemporada.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(nuevatemporada.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       nom.setText("");                              // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,6 +214,6 @@ Inicio i=new Inicio();
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField nom;
     // End of variables declaration//GEN-END:variables
 }
