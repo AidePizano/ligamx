@@ -4,15 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Nuevopartido.java</file>
-            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/lbImage.java</file>
-            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/SplashScreen.java</file>
-            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Menu.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Aasplash.java</file>
             <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/nuevatemporada.java</file>
-            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/nuevajornada.java</file>
             <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Inicio.java</file>
-            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Ventana.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/ventana.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/editartemporada.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/equipo.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Itemporada.java</file>
             <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/tecnicos.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Jornada.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/nuevajornada.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/barra.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/editarjornada.java</file>
             <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Partidos.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/informacion.java</file>
+            <file>file:/C:/Users/Aide%20Piez/Desktop/Ligamx/src/ligamx/Itecnicos.java</file>
         </group>
     </open-files>
 </project-private>
